@@ -9,10 +9,10 @@ use Illuminate\Support\Str;
 class Project extends Model
 {
     use HasFactory;
-    protected $fillable =['title', 'link', 'slug'];
+    protected $fillable =['name', 'link', 'slug'];
 
-    public static function generateSlug ($title)
+    public static function generateSlug($name)
     {
-        return Str::slug ($title, '-');
+        return Str::slug($name, '-');
     }
 }
