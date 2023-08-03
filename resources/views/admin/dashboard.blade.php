@@ -19,7 +19,11 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+                
             </div>
+            {{--  route non funzionante--}}
+            <a class="btn btn-primary btn-md mt-2" href="{{route('admin.projects.index')}}">Gestisci i tuoi progetti</a> 
+           
         </div>
     </div>
 </div>

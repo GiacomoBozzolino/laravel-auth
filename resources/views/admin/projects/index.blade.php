@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
                   <tr>
                     <th scope="col">Name</th>
@@ -18,9 +18,8 @@
                   <tr>
                     <td>{{$project-> name}}</td>
                     <td>{{$project-> link}}</td>
-                    <td>{{$project-> slug}}</td>
-                        
-                </tr>
+                    <td>{{$project-> slug}}</td>    
+                    </tr>
                 @endforeach
                   
                 </tbody>
