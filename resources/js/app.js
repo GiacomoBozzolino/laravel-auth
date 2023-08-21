@@ -6,30 +6,38 @@ import.meta.glob([
 ])
 
 
-const deleteSubmitButton = document.querySelectorAll('.delete-project-form button[type="submit"]');
+// RECUPERO TUTTI I DELETE_BUTTON DI OGNI PROGETTO
+const projectDeleteButton = document.querySelectorAll('.project-delete-button');
 
-deleteSubmitButton.forEach((button)=> {
-    event.preventDefault();
+// CICLO TUTTI I PULSANTI
+projectDeleteButton.forEach((button) => {
 
-    const modal =document.getElementById('ConfirmProjectDelete');
+    button.addEventListener('click', (event) => {
 
-    const project_name =button.getAttribute('data-project-name');
+        event.preventDefault();
 
+        // QUANDO L'UTENTE CLICCA SUL DELETE_BUTTON, MI VIENE PASSATO UN DATA ATTRIBUTE, LO RECUPERO TRAMITE QUESTA STRINGA
+        const projectTitle = button.getAttribute('data-project-title');
 
-    const bootstrapModal= new bootstrap.Modal(modal);
-    bootstrapModal.show();
+        const modalProjectTitle = document.getElementById('modal-project-title');
 
-    const projectNameYield = modal.querySelector('#modal-project-name')
+        // IN QUESTO MODO RECUPERO IL TITOLO DEL PROGETTO
+        modalProjectTitle.innerText = projectTitle;
 
-    projectNameYield.textContent =project_name;
+        // RECUPERO L'HTML DELLA MODALE TREMITE L'ID
+        const modal = document.getElementById('projectConfirmDeleteModal');  //FARE ATTENZIONE AL NOME COMPLETO DELL'ID
 
+        const bootstrapModal = new bootstrap.Modal(modal);
+        bootstrapModal.show();
 
+        // RECUPERO IL PULSANTE DI "CONFERMA CANCELLAZIONE" PRESENTE NELLA MODALE
+        const projectConfirmDeleteButton = document.getElementById('project-confirm-delete-button');
 
-    const ButtonDelete =document.querySelector('.confirm-delete-button');
-    ButtonDelete.addEventListener ('click',()=>{
-        button.parentElemetn.submit();
+        // AL PULSANTE DI "CONFERMA CANCELLAZIONE", AGGIUNGO UN EVENT_LISTENER "CLICK"
+        projectConfirmDeleteButton.addEventListener('click', () => {
+
+            // RECUPERO IL "DELETE_BUTTON", ED ESEGUO LA FORM DI CANCELLAZIONE
+            button.submit();
+        })
     })
-
-
-
 })
