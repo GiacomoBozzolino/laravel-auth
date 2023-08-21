@@ -30,16 +30,14 @@
                           </a>
                         </td>   
                         <td>
-                            <form action="{{route('admin.projects.destroy', $project->id)}}" onsubmit="return confirm('Vuoi davvero cancellare il progetto?')" method="post" >
-                              @csrf
-                              @method ('DELETE')
-                              <button  class="btn btn-danger" type="submit">
-                                  <i class="fas fa-trash"></i>
-                              </button> 
-                          </form>
+                          <form class="project-delete-button d-inline-block mx-1" data-project-title="{{ $project->name }}" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
                         </td>
-
-                             
                       </tr>
                 @endforeach 
               </tbody>
