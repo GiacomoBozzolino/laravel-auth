@@ -9,16 +9,25 @@
                 </div>
             </div>
             <div class="col-12">
+                @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
                 <form action="{{route('admin.projects.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label class="control-label" >Title</label>
-                        <input type="text" id="title" name="title" class="form-control" placeholder="Title" value="{{old('title')}}">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="name" value="{{old('name')}}">
                     </div>
                   
                     <div class="form-group">
                         <label class="control-label" >Link</label>
-                        <input type="text" id="link" name="link" class="form-control" placeholder="link" value="{{old('link')}}">
+                        <input type="link" id="link" name="link" class="form-control" placeholder="link" value="{{old('link')}}">
                     </div>
                     
                     <div class=" form-group mt-2">
