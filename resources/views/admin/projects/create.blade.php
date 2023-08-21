@@ -13,7 +13,7 @@
                     @csrf
                     <div class="form-group">
                         <label class="control-label" >Title</label>
-                        <input type="text" id="title" name="title" class="form-control" placeholder="Title" value="{{old('title')}}">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="name" value="{{old('name')}}">
                     </div>
                   
                     <div class="form-group">
