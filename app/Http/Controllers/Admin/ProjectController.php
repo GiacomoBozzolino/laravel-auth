@@ -82,7 +82,11 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $form_data =  $request ->all();
+    //    creazione nuovo slug
+        $form_data ['slug'] = $project ->generateSlug($form_data['name']);
+        $project ->update ($form_data);
+        return redirect()->route ('admin.projects.index');
     }
 
     /**
@@ -93,6 +97,6 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        
     }
 }
