@@ -10,6 +10,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Link</th>
                     <th scope="col">Slug</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -27,7 +28,18 @@
                           <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning">
                           <i class="fas fa-edit"></i>
                           </a>
-                        </td>        
+                        </td>   
+                        <td>
+                            <form action="{{route('admin.projects.destroy', $project->id)}}" onsubmit="return confirm('Vuoi davvero cancellare il progetto?')" method="post" >
+                              @csrf
+                              @method ('DELETE')
+                              <button  class="btn btn-danger" type="submit">
+                                  <i class="fas fa-trash"></i>
+                              </button> 
+                          </form>
+                        </td>
+
+                             
                       </tr>
                 @endforeach 
               </tbody>
