@@ -14,14 +14,21 @@
                 </thead>
                 <tbody>
                     @foreach ($projects as $project)
-                  <tr>
-                    <td>{{$project-> name}}</td>
-                    <td>{{$project-> link}}</td>
-                    <td>{{$project-> slug}}</td> 
-                    <td><a href="{{route('admin.projects.show', $project->id)}}" class="btn btn-primary">
-                      <i class="fas fa-eye"></i>
-                    </a></td>     
-                    </tr>
+                      <tr>
+                        <td>{{$project-> name}}</td>
+                        <td>{{$project-> link}}</td>
+                        <td>{{$project-> slug}}</td> 
+                        <td>
+                          <a href="{{route('admin.projects.show', $project->id)}}" class="btn btn-primary">
+                          <i class="fas fa-eye"></i>
+                          </a>
+                        </td> 
+                        <td>
+                          <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning">
+                          <i class="fas fa-edit"></i>
+                          </a>
+                        </td>        
+                      </tr>
                 @endforeach 
               </tbody>
             </table>

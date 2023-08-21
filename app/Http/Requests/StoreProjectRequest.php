@@ -36,7 +36,6 @@ class StoreProjectRequest extends FormRequest
             'name.max'=> 'Il nome di questo progetto è troppo lungo! Meglio non superare i :max caratteri.',
             'link.required'=> 'Devi inserire un link al progetto!',
             
-
         ];
     }
 }
