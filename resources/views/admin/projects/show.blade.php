@@ -14,7 +14,6 @@
                   <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Link</th>
-                    
                   </tr>
                 </thead>
                 <tbody>
