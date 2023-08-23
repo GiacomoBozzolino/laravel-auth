@@ -21,7 +21,7 @@
                       <td>{{$project-> name}}</td>
                       <td>{{$project-> link}}</td>
                       <td>
-                        <img src="{{$project-> img}}" alt=""></td>  
+                        <img class="img-thumbnail img-fluid" src="{{ asset('storage/'.$project-> img)}}" alt=""></td>  
                     </tr>
                 </tbody>
             </table>
