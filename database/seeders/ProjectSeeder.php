@@ -17,7 +17,6 @@ class ProjectSeeder extends Seeder
     public function run(Faker $faker)
     {
         
-
         for ($i=1; $i <11 ; $i++) {
             $project= new Project(); 
 
