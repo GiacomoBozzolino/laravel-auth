@@ -91,6 +91,17 @@ class ProjectController extends Controller
         $form_data =  $request ->all();
     //    creazione nuovo slug
         $form_data ['slug'] = $project ->generateSlug($form_data['name']);
+
+        if($request->hasFile('img')){
+            // ISERISCO CONTROLLO PER CANCELLAZIONE IMG GIA PRESENTE
+                if($project->img){
+                    Storage::delete($project->img);
+                }
+            $path =Storage::put('project_imeges' , $request->img);
+            $form_data['img']=$path;
+        }
+
+
         $project ->update ($form_data);
         return redirect()->route ('admin.projects.index');
     }
