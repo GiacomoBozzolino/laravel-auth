@@ -26,6 +26,7 @@ class UpdateProjectRequest extends FormRequest
         return [
             'name'=> 'required|max:50',
             'link'=> 'required',
+            'img' => 'image|max:250'
         ];
     }
 
@@ -33,8 +34,10 @@ class UpdateProjectRequest extends FormRequest
     public function messages(){
         return [
             'name.required'=> 'Questo progetto deve avere un nome!',
-            'name.max'=> 'Il nome di questo progetto è troppo lungo! Meglio non superare i :max caratteri.',
+            'name.max'     => 'Il nome di questo progetto è troppo lungo! Meglio non superare i :max caratteri.',
             'link.required'=> 'Devi inserire un link al progetto!',
+            'img.image'    => 'Il file deve essere di tipo jpg, png, jpeg, webp.',
+            'imag.max'     => 'Il nome del file non deve superare i :max caratteri.',
             
         ];
     }
