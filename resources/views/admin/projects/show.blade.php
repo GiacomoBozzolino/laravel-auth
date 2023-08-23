@@ -19,7 +19,9 @@
                 <tbody>
                     <tr>
                       <td>{{$project-> name}}</td>
-                      <td>{{$project-> link}}</td> 
+                      <td>{{$project-> link}}</td>
+                      <td>
+                        <img src="{{$project-> img}}" alt=""></td>  
                     </tr>
                 </tbody>
             </table>

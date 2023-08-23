@@ -18,7 +18,7 @@
                     </ul>
                 </div>
             @endif
-                <form action="{{route('admin.projects.store')}}" method="POST">
+                <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label class="control-label" >Title</label>
@@ -28,6 +28,11 @@
                     <div class="form-group">
                         <label class="control-label" >Link</label>
                         <input type="link" id="link" name="link" class="form-control" placeholder="link" value="{{old('link')}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" >Copertina</label>
+                        <input type="file" id="img" name="img" class="form-control" placeholder="img" value="{{old('img')}}">
                     </div>
                     
                     <div class=" form-group mt-2">

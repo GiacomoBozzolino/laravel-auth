@@ -23,6 +23,7 @@ class ProjectSeeder extends Seeder
             $project->name = $faker ->sentence (3);
             $project->link= $faker -> url();
             $project->slug=$project->generateSlug($project->name);
+            $project->img=$faker->imageUrl(640,480,'animals',true);
 
             $project->save();
   
